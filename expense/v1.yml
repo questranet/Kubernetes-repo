@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: frontend
-      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/frontend:2.0.1
+      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/frontend:2.0.2
   imagePullSecrets:
     - name: aws-ecr
 ---
@@ -33,7 +33,7 @@ metadata:
 spec:
   containers:
     - name: backend
-      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/backend:2.0.1
+      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/backend:2.0.0
       env:
         - name: DB_HOST
           value: mysql
@@ -90,7 +90,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: schema
-          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-schema-load:2.0.3
+          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-schema-load:AD
           env:
             - name: DBHOST
               value: mysql

@@ -90,7 +90,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: schema
-          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-schema-load:AD
+          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-schema-load:2.0.4
           env:
             - name: DBHOST
               value: mysql

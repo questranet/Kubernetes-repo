@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
     - name: frontend
-      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/frontend:2.0.2
+      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/frontend:2.0.1
   imagePullSecrets:
     - name: aws-ecr
 ---

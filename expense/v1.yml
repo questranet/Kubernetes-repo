@@ -91,7 +91,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: schema
-          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/Exp-schema-load:AD
+          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/backend:2.0.1
           imagePullPolicy: Always
           env:
             - name: DBHOST

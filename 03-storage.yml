@@ -8,14 +8,15 @@ spec:
       image: centos
       command: ["tail", "-f", "/dev/null"]
       volumeMounts:
-        - mountPath: /parameters
-          name: tmp
+      - mountPath: /parameters
+        name: temp
     - name: con2
       image: centos
       command: ["tail", "-f", "/dev/null"]
-      volumeMounts: /parameters
-      name: tmp
+      volumeMounts:
+      - mountPath: /parameters
+        name: temp
   volumes:
-    - name: tmp
-      emptyDir:
+  - name: temp
+    emptyDir:
         sizeLimit: 5Mi

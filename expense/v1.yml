@@ -86,6 +86,7 @@ metadata:
 spec:
   template:
     spec:
+      serviceAccountName: schema
       imagePullSecrets:
         - name: aws-ecr
       restartPolicy: Never

@@ -64,7 +64,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: schema
-          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/exp-schema-load:2.0.1
+          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/exp-schema-load:AD
           env:
             - name: DBHOST
               value: prod-mysql.cluster-c3rf7skzcvc3.us-east-1.rds.amazonaws.com

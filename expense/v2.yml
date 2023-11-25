@@ -51,6 +51,8 @@ spec:
   initContainers:
     - name: aws-param
       image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-parameter-init-container:1.0.0
+      imagePullSecrets:
+        - name: kubernetes.io/dockerconfigjson
       env:
         - name: INPUT
           value: "DB_HOST, prod.rds.endpoint"
@@ -101,6 +103,8 @@ spec:
       initContainers:
         - name: aws-param
           image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-parameter-init-container:1.0.0
+          imagePullSecrets:
+            - name: kubernetes.io/dockerconfigjson
           env:
             - name: INPUT
               value: "DBHOST,prod.rds.endpoint DBUSER,prod.rds.master_username DBPASS,prod.rds.master_password "
@@ -110,6 +114,8 @@ spec:
       containers:
         - name: schema
           image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/exp-schema-load:1.0.1
+          imagePullSecrets:
+            - name: kubernetes.io/dockerconfigjson
           env:
             - name: COMPONENT
               value: backend

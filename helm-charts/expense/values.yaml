@@ -1,2 +1,4 @@
 initContainers:
   enabled: false
+job:
+  enabled: false

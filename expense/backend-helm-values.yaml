@@ -8,3 +8,8 @@ initContainers:
   enabled: true
   imageVersion: 1.0.0
   INPUT: "DB_HOST, prod.rds.endpoint"
+
+job:
+  enabled: true
+  INPUT: "DBHOST,prod.rds.endpoint DBUSER,prod.rds.master_username DBPASS,prod.rds.master_password"
+  imageVersion: 1.0.1

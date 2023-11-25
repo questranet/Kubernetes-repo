@@ -6,34 +6,4 @@ metadata:
   annotations:
     eks.amazonaws.com/role-arn: arn:aws:iam::008089408493:role/prod-expense-schema-eks-sa
 ---
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: schema
-spec:
-  template:
-    spec:
-      serviceAccountName: schema
-      restartPolicy: Never
-      initContainers:
-        - name: aws-param
-          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-parameter-init-container:1.0.0on
-          env:
-            - name: INPUT
-              value: "DBHOST,prod.rds.endpoint DBUSER,prod.rds.master_username DBPASS,prod.rds.master_password "
-          volumeMounts:
-            - mountPath: /config
-              name: config
-      containers:
-        - name: schema
-          image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/exp-schema-load:1.0.1
-          env:
-            - name: COMPONENT
-              value: backend
-          volumeMounts:
-            - mountPath: /config
-              name: config
-      volumes:
-        - name: config
-          emptyDir:
-            sizeLimit: 5Mi
+

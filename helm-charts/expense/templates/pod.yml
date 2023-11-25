@@ -29,6 +29,6 @@ spec:
 {{- else }}
   containers:
     - name: { { .Values.appName } }
-      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName}}:{{ .Values.appVersion }}
+      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName }}:{{ .Values.appVersion }}
 {{- end }}
 

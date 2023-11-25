@@ -6,6 +6,29 @@ metadata:
     app: {{ .Values.appName }}
 spec:
   serviceAccountName: {{ .Values.appName }}
+{{- if .Values.initContainers.enabled }}
+  volumes:
+    - name: config
+      emptyDir:
+        sizeLimit: 5Mi
+  initContainers:
+    - name: aws-param
+      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-parameter-init-container:{{ .Values.initContainers.imageVersion }}
+      env:
+        - name: INPUT
+          value: "{{ .Values.initContainers.INPUT }}"
+      volumeMounts:
+      - mountPath: /config
+        name: config
   containers:
     - name: {{ .Values.appName }}
       image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName}}:{{ .Values.appVersion }}
+      volumeMounts:
+        - mountPath: /config
+          name: config
+{{- else }}
+  containers:
+    - name: { { .Values.appName } }
+      image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/{{ .Values.appName}}:{{ .Values.appVersion }}
+{{- end }}
+

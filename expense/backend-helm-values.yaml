@@ -1,0 +1,10 @@
+appName: backend
+appVersion: 2.0.4
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+initContainer:
+  enabled: true
+  imageVersion: 1.0.0
+  INPUT: "DB_HOST, prod.rds.endpoint"

@@ -2,3 +2,4 @@ initContainers:
   enabled: false
 job:
   enabled: false
+replicas: 1

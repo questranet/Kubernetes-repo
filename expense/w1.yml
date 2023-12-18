@@ -36,7 +36,7 @@ spec:
       image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/backend:2.0.1
       env:
         - name: DB_HOST
-          value: mysql
+          value: prod-mysql.cluster-c3rf7skzcvc3.us-east-1.rds.amazonaws.com
   imagePullSecrets:
     - name: aws-ecr
 ---
@@ -69,7 +69,7 @@ spec:
             - name: DBHOST
               value: prod-mysql.cluster-c3rf7skzcvc3.us-east-1.rds.amazonaws.com
             - name: DBPASS
-              value: "ExpenseApp@1"
+              value: "expenseprod1234"
             - name: DBUSER
               value: mysqlrdsadmin
             - name: COMPONENT

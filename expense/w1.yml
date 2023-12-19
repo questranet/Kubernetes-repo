@@ -45,7 +45,7 @@ metadata:
     app: backend
 spec:
   serviceAccountName: backend
-  initcontainers:
+  initContainers:
     - name: aws-param
       image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-parameter-init-container:1.0.0
       env:
@@ -93,7 +93,7 @@ spec:
     spec:
       serviceAccountName: schema
       restartPolicy: Never
-      initcontainers:
+      initContainers:
         - name: aws-param
           image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/eexpense-parameter-init-container:1.0.0
           env:

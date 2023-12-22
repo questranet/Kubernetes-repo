@@ -98,7 +98,7 @@ spec:
           image: 008089408493.dkr.ecr.us-east-1.amazonaws.com/expense-parameter-init-container:1.0.0
           env:
             - name: INPUT
-              value: "DBHOST, prod.rds.endpoint DBUSER,prod.rds.master_username DBPASS, prod.rds.master_password"
+              value: "DBHOST,prod.rds.endpoint DBUSER,prod.rds.master_username DBPASS,prod.rds.master_password"
           volumeMounts:
             - mountPath: /config
               name: config
